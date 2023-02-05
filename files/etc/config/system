@@ -1,0 +1,29 @@
+
+config system
+	option ttylogin '0'
+	option log_size '64'
+	option urandom_seed '0'
+	option compat_version '1.0'
+	option timezone 'CST-8'
+	option zonename 'Asia/Shanghai'
+	option hostname 'MMDVM-4G'
+	option notes 'MMDVM路由便携热点'
+	option log_proto 'udp'
+	option conloglevel '8'
+	option cronloglevel '5'
+
+config timeserver 'ntp'
+	list server 'ntp.tencent.com'
+	list server 'ntp1.aliyun.com'
+	list server 'ntp.ntsc.ac.cn'
+	list server 'cn.ntp.org.cn'
+
+config led 'led_wlan'
+	option name 'WLAN'
+	option sysfs 'green:wlan'
+	option trigger 'netdev'
+	option dev 'eth1'
+	list mode 'link'
+	list mode 'tx'
+	list mode 'rx'
+
