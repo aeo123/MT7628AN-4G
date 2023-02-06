@@ -1,0 +1,30 @@
+
+config system
+	option ttylogin '0'
+	option log_size '64'
+	option urandom_seed '0'
+	option compat_version '1.0'
+	option timezone 'CST-8'
+	option zonename 'Asia/Shanghai'
+	option log_proto 'udp'
+	option conloglevel '8'
+	option cronloglevel '5'
+	option hostname 'LTE-4G'
+	option description '工业4G路由'
+	option notes '工业4G路由便携热点'
+
+config timeserver 'ntp'
+	list server 'ntp.tencent.com'
+	list server 'ntp1.aliyun.com'
+	list server 'ntp.ntsc.ac.cn'
+	list server 'cn.ntp.org.cn'
+
+config led 'led_wlan'
+	option name 'WLAN'
+	option sysfs 'green:wlan'
+	option trigger 'netdev'
+	list mode 'link'
+	list mode 'tx'
+	list mode 'rx'
+	option dev '3g-4G'
+
